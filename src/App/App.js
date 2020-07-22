@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Header from '../Header/Header';
-import Main from '../Main/Main';
-import Footer from '../Footer/Footer';
+import Header from '../components/header/Header';
+import Main from '../components/main/Main';
+import Footer from '../components/footer/Footer';
 
 class App extends React.Component {
   render() {
@@ -15,5 +15,4 @@ class App extends React.Component {
     )
   }
 }
-
 export default App;

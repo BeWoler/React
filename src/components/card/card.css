@@ -1,10 +1,4 @@
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.news-card {
+.card {
     overflow-wrap: normal;
     box-shadow: grey 0 0 10px;
     max-width: 500px;
@@ -16,17 +10,17 @@ main {
     height: 310px;
 }
 
-.news-text-box {
+.text-box {
     margin: 0 15px 20px 15px;
     min-height: 150px;
 }
 
-.news-theme {
+.main-theme {
     font-weight: 600;
     font-size: 20px;
 }
 
-.news-text {
+.main-text {
     font-size: 16px;
 }
 

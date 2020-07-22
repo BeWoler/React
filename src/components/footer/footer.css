@@ -5,13 +5,13 @@ footer {
     color: #FFFFFF
 }
 
-.footer-ul {
+footer ul {
     list-style-type: none;
     font-size: 18px;
     margin: 0;
     padding: 20px 0 20px 165px;
 }
 
-.footer-li {
+footer li {
     margin: 25px 0 25px 0;
 }
