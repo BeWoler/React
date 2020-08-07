@@ -1,0 +1,15 @@
+form {
+  max-width: 220px;
+  max-height: 400px;
+  box-shadow: grey 0 0 10px;
+  margin: 30px auto;
+  padding: 20px 25px 20px 20px;
+}
+
+form input {
+  width: 200px;
+  height: 20px;
+  display: block;
+  margin: 0 0 20px 0;
+}
+
