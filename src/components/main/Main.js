@@ -1,46 +1,39 @@
 import React from 'react';
 import './main.css';
 import Card from '../card/Card';
+import CardCreate from '../cardCreate/CardCreate';
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cardsArr: []
+    };
+  }
   render() {
-    const cardsArr = [
-      <Card 
-        key='1' 
-        img='https://sun9-63.userapi.com/c858528/v858528247/1b4c0f/IKImJTOAhM8.jpg' 
-        theme='Первая тема' 
-        text='Первый текст' 
-        position={1}
-      />,
+    const addItem = (item) => {
+      const { img, theme, text } = item;
+      const newItem = (
+        <Card 
+          key={this.state.cardsArr.length + 1}
+          img={img} theme={theme}
+          text={text}
+          position={0}
+        />
+      );
 
-      <Card 
-        key='3' 
-        img='https://sun9-9.userapi.com/c857336/v857336360/f4c0f/AE4G0QzkAgw.jpg' 
-        theme='Третья' 
-        text='Третий текст' 
-        position={3} 
-      />,
+      this.setState({
+        cardsArr: [...this.state.cardsArr, newItem]
+      });
+    };
 
-      <Card 
-        key='2' 
-        img='https://sun9-1.userapi.com/c858024/v858024166/160af7/HEqnJudwj5Y.jpg' 
-        theme='Вторая тема' 
-        text='Второй текст' 
-        position={2} 
-      />,
-
-      <Card 
-        key='4' 
-        img='https://sun9-74.userapi.com/c855724/v855724022/1d7916/slYx-TRUjHc.jpg' 
-        theme='Четвёртая' 
-        text='Четвёртый текст' 
-        position={4} 
-      />
-    ];  
-     
     return (
       <main>
-        {cardsArr.sort( (a, b) => a.props.position - b.props.position )}
+        {this.state.cardsArr.sort((a, b) => a.props.position - b.props.position )}
+        <div className='creator'>
+          <CardCreate handleOnSubmit={addItem} />
+        </div>
       </main>
     );
   }
