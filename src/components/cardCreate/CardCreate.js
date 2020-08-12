@@ -4,41 +4,49 @@ import './cardCreate.css';
 class CardCreate extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       theme: '',
       text: '',
       img: ''
     };
-
+    
     this.handleChangeText = this.handleChangeText.bind(this);
     this.handleChangeImg = this.handleChangeImg.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
   
-  handleChangeText(e) {
-    const theme = e.target.value.split('.')[0],
-      text = e.target.value.split('.')[1];
+  handleChangeText(event) {
+    const splitString = event.target.value.split('.');
 
-    this.setState({theme: theme});
-    this.setState({text: text});
+    this.setState({theme: splitString[0], text: splitString[1]});
   }
 
-  handleChangeImg(e) {
-    this.setState({img: e.target.value});
+  handleChangeImg(event) {
+    this.setState({img: event.target.value});
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit(event) {
+    event.preventDefault();
 
     this.props.handleOnSubmit(this.state);
   }
 
   render() {
     return(
-      <div>
+      <div className = 'creator'>
         <form onSubmit={this.onSubmit}>
-          <textarea onChange={this.handleChangeText} name='textInput' type='textarea' placeholder='Введите основной текст' value={this.props.text} />
-          <input onChange={this.handleChangeImg} name='imgInput' type='text' placeholder='Укажите ссылку на картинку' value={this.props.img} />
+          <textarea onChange={this.handleChangeText} 
+            name='textInput' 
+            type='textarea' 
+            placeholder='Введите основной текст' 
+            value={this.props.text} />
+          <input 
+            onChange={this.handleChangeImg} 
+            name='imgInput' 
+            type='text' 
+            placeholder='Укажите ссылку на картинку' 
+            value={this.props.img} />
           <button>Создать</button>
         </form>
       </div>

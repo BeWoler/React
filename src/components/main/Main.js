@@ -6,6 +6,7 @@ import CardCreate from '../cardCreate/CardCreate';
 class Main extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       cardsArr: []
     };
@@ -29,8 +30,10 @@ class Main extends React.Component {
 
     return (
       <main>
-        <CardCreate handleOnSubmit={addItem} />
         {this.state.cardsArr.sort((a, b) => a.props.position - b.props.position )}
+        <div className='creator'>
+          <CardCreate handleOnSubmit={addItem} />
+        </div>
       </main>
     );
   }
