@@ -1,5 +1,7 @@
 import React from 'react';
 import './card.css';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 class Card extends React.Component {
   render() {
@@ -10,9 +12,13 @@ class Card extends React.Component {
         <img className='cards-preview' src={img} alt='Preview'></img>
         <div className='text-box'>
           <p className='main-theme'>{theme}</p>
-          <span className='main-text'>{text}</span>
+          <p className='main-text'>{text}</p>
         </div>
-        <button className='button-next'>Далее</button>
+        <div>
+          <Moment className='date' interval={0} format='DD.MM.YYYY' />
+          <Moment className='time' interval={0} format='HH:mm' />
+          <button className='button-next'>Далее</button>
+        </div>
       </div>
     );
   }

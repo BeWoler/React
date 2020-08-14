@@ -1,9 +1,9 @@
 form {
   max-width: 220px;
-  max-height: 400px;
+  height: 300px;
   box-shadow: grey 0 0 10px;
   margin: 30px auto;
-  padding: 20px 25px 20px 20px;
+  padding: 20px 30px;
 }
 
 form input {
@@ -11,4 +11,14 @@ form input {
   height: 20px;
   display: block;
   margin: 0px 0px 20px 0px;
+}
+
+form button {
+  margin: 100px 0px 0px 0px;
+}
+
+textarea {
+  width: 200px;
+  height: 50px;
+  margin: 0px 0px 50px 0px;
 }

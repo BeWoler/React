@@ -29,7 +29,7 @@ class Main extends React.Component {
     };
 
     return (
-      <main>
+      <main className = 'main__container'>
         {this.state.cardsArr.sort((a, b) => a.props.position - b.props.position )}
         <div className='creator'>
           <CardCreate handleOnSubmit={addItem} />
